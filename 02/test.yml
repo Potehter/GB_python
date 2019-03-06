@@ -1,0 +1,9 @@
+firstkey:
+- test
+- 4
+- newstring
+secondkey: 10
+thirdkey:
+  EUR: €
+  GBP: £
+  USD: $
