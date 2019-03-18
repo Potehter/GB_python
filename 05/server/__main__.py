@@ -2,6 +2,7 @@ import json
 import socket
 import logging
 from datetime import datetime
+from .log import server_log_config
 
 from protocol import (
     validate_request, make_response, 
@@ -10,15 +11,7 @@ from protocol import (
 from routes import resolve
 
 
-logger = logging.getLogger('default')
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-handler = logging.FileHandler('default.log')
-
-handler.setFormatter(formatter)
-handler.setLevel(logging.DEBUG)
-
-logger.addHandler(handler)
-logger.setLevel(logging.DEBUG)
+logger = logging.getLogger('app.server')
 
 sock = socket.socket()
 sock.bind(('', 8888))
@@ -27,7 +20,7 @@ sock.listen(5)
 try:
     while True:
         client, address = sock.accept()
-        logger.debug(f'Client detected {address}')
+        logger.debug('Client detected {0}'.format(address))
         data = client.recv(1024)
         request = json.loads(data.decode('utf-8'))
 

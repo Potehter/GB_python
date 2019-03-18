@@ -1,8 +1,10 @@
 import json
 import socket
 from datetime import datetime
+import logging
+from .log import client_log_config
 
-
+logger = logging.getLogger('app.client')
 socket = socket.socket()
 socket.connect(('localhost', 8888))
 
@@ -23,7 +25,7 @@ while True:
 
     if response:
 
-        print(
+        logger.info(
             response.decode()
         )
 
