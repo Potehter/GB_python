@@ -1,0 +1,13 @@
+venv
+*.log
+.coverage
+__pycache__
+.pytest_cache
+.ipynb_checkpoints
+project.code-workspace
+encoding.ipynb
+/csv
+/yaml
+/json
+/io
+/encodings.py
