@@ -11,7 +11,7 @@ def get_server_routes():
         reduce(
             lambda submodules, module: submodules + [getattr(module, 'routes', [])],
             reduce (
-                lambda modules, module: modules + [__import__(f'{module}.routes')],
+                lambda modules, module: modules + [__import__('{0}.routes'.format(module))],
                 INSTALLED_MODULES,
                 []
             ),

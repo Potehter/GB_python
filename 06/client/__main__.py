@@ -2,7 +2,7 @@ import json
 import socket
 from datetime import datetime
 import logging
-from .log import client_log_config
+#from .log import client_log_config
 
 logger = logging.getLogger('app.client')
 socket = socket.socket()

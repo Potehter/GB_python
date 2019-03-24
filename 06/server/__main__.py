@@ -2,7 +2,6 @@ import json
 import socket
 import logging
 from datetime import datetime
-from .log import server_log_config
 
 from protocol import (
     validate_request, make_response, 
